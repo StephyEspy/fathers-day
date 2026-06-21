@@ -7,18 +7,71 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <div class="crt-overlay" aria-hidden="true"></div>
+    <div class="stars" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <main class="page">
       <section class="hero" aria-labelledby="page-title">
-        <p class="eyebrow">Father's Day</p>
-        <h1 id="page-title">Happy Father's Day</h1>
-        <p class="message">
-          Thank you for every lesson, every laugh, and every steady moment of
-          support. Today is for celebrating you.
-        </p>
-        <a class="button" href="#note">Read the note</a>
+        <div class="cabinet">
+          <div class="marquee">
+            <span class="marquee-light"></span>
+            <p class="eyebrow">Arcade Tribute Mode</p>
+            <span class="marquee-light"></span>
+          </div>
+
+          <div class="screen">
+            <div class="sun" aria-hidden="true"></div>
+            <div class="horizon" aria-hidden="true"></div>
+
+            <div class="hero-content">
+              <h1 id="page-title" data-text="Happy Father’s Day">Happy Father’s Day</h1>
+              <p class="message">
+                Thank you for every lesson, every laugh, and every steady moment
+                of support. Today is for celebrating you.
+              </p>
+
+              <div class="controls" aria-label="Page actions">
+                <a class="button primary" href="#note">Start Tribute</a>
+                <a class="button secondary" href="#systems">Power Stats</a>
+              </div>
+            </div>
+
+            <div class="grid-floor" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panels" id="systems" aria-label="Dad power stats">
+        <article class="panel">
+          <span class="panel-kicker">Core</span>
+          <h2>Steady Support</h2>
+          <p>Always showing up with patience, perspective, and a calm voice.</p>
+        </article>
+
+        <article class="panel">
+          <span class="panel-kicker">Boost</span>
+          <h2>Legendary Laughs</h2>
+          <p>Powered by quick jokes, classic stories, and perfectly timed smiles.</p>
+        </article>
+
+        <article class="panel">
+          <span class="panel-kicker">Shield</span>
+          <h2>Everyday Hero</h2>
+          <p>Making ordinary days brighter through kindness and quiet strength.</p>
+        </article>
       </section>
 
       <section class="note" id="note" aria-label="Father's Day note">
+        <span class="panel-kicker">Final Message</span>
         <h2>For Dad</h2>
         <p>
           You make ordinary days better with your kindness, patience, and sense
