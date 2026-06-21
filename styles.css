@@ -358,49 +358,103 @@ p {
 
 h1 {
   position: relative;
-  max-width: 10.5ch;
+  width: min(100%, 58rem);
+  min-height: 2.22em;
   margin-bottom: clamp(1rem, 2vw, 1.35rem);
   font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
-  font-size: clamp(3.25rem, 13vw, 9.6rem);
-  line-height: 0.82;
+  font-size: clamp(3.2rem, 10.6vw, 8.5rem);
+  line-height: 0.72;
   letter-spacing: 0;
   text-transform: uppercase;
-  color: transparent;
-  background:
-    linear-gradient(180deg, #ffffff 0%, #d8e0ea 13%, #f9fdff 21%, #687481 30%, #10141d 38%, #ff2448 39%, #f7fbff 48%, #245cff 58%, #10141d 70%, #aeb9c8 80%, #ffffff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-stroke: clamp(1.5px, 0.28vw, 4px) rgba(3, 4, 10, 0.94);
-  text-shadow:
-    0 0.08em 0 #05070e,
-    0 0.13em 0 rgba(255, 210, 63, 0.78),
-    0 0.18em 0 rgba(36, 92, 255, 0.88);
-  filter: drop-shadow(0 0 0.55rem rgba(32, 242, 255, 0.75)) drop-shadow(0 0 1.5rem rgba(255, 36, 72, 0.52));
+  color: var(--text);
+  filter:
+    drop-shadow(0 0 0.35rem rgba(32, 242, 255, 0.68))
+    drop-shadow(0 0 1.2rem rgba(255, 36, 72, 0.42));
   animation: title-glow 2.7s ease-in-out infinite;
 }
 
-h1::before,
-h1::after {
+h1 span {
+  position: absolute;
+  left: 50%;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  color: transparent;
+  background:
+    linear-gradient(180deg,
+      #eefaff 0%,
+      #ffffff 9%,
+      #96f4ff 13%,
+      #10151e 15%,
+      #f6fbff 24%,
+      #b9c4d2 34%,
+      #3e4654 44%,
+      #090b10 49%,
+      #b1061d 50%,
+      #ff2448 62%,
+      #ffedf1 72%,
+      #7a0b18 82%,
+      #f7fbff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: clamp(2px, 0.32vw, 4.5px) rgba(3, 4, 10, 0.98);
+  text-shadow:
+    0.025em 0.025em 0 #ffffff,
+    0.055em 0.06em 0 #090b10,
+    0.09em 0.1em 0 #05060b,
+    0.13em 0.15em 0 rgba(0, 0, 0, 0.95),
+    -0.035em -0.035em 0 rgba(32, 242, 255, 0.9),
+    0 0.19em 0 rgba(5, 6, 11, 0.92);
+  transform: translateX(-50%) scaleX(1.14);
+}
+
+h1 span::before,
+h1 span::after {
   position: absolute;
   inset: 0;
   content: attr(data-text);
   pointer-events: none;
 }
 
-h1::before {
+h1 span::before {
   z-index: -1;
   color: transparent;
-  -webkit-text-stroke: clamp(5px, 0.75vw, 10px) rgba(237, 247, 255, 0.28);
-  filter: blur(0.5px);
+  -webkit-text-stroke: clamp(7px, 0.85vw, 12px) rgba(2, 3, 8, 0.96);
+  text-shadow:
+    0.06em 0.06em 0 #2d050c,
+    0.12em 0.12em 0 #020309,
+    0.19em 0.19em 0 rgba(0, 0, 0, 0.85);
 }
 
-h1::after {
+h1 span::after {
   color: transparent;
-  background: linear-gradient(105deg, transparent 9%, rgba(255, 255, 255, 0.98) 43%, rgba(32, 242, 255, 0.84) 48%, transparent 58%);
-  background-size: 230% 100%;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0 10%, transparent 11% 100%),
+    linear-gradient(105deg, transparent 8%, rgba(255, 255, 255, 0.98) 41%, rgba(32, 242, 255, 0.92) 48%, transparent 59%);
+  background-size: 100% 100%, 230% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   animation: chrome-sweep 3.3s ease-in-out infinite;
+}
+
+h1 span:nth-child(1) {
+  position: relative;
+  left: auto;
+  margin: 0 auto -0.03em;
+  font-size: 0.74em;
+  transform: scaleX(1.1);
+}
+
+h1 span:nth-child(2) {
+  top: 0.63em;
+  font-size: 0.92em;
+  transform: translateX(-50%) scaleX(1.02);
+}
+
+h1 span:nth-child(3) {
+  top: 1.24em;
+  font-size: 1.02em;
+  transform: translateX(-50%) scaleX(1.22);
 }
 
 .message {
