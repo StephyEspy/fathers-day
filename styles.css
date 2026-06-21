@@ -359,10 +359,11 @@ p {
 h1 {
   position: relative;
   width: min(100%, 58rem);
-  min-height: 2.22em;
+  min-height: 2.1em;
   margin-bottom: clamp(1rem, 2vw, 1.35rem);
   font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
   font-size: clamp(3.2rem, 10.6vw, 8.5rem);
+  font-style: italic;
   line-height: 0.72;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -382,29 +383,33 @@ h1 span {
   color: transparent;
   background:
     linear-gradient(180deg,
-      #eefaff 0%,
-      #ffffff 9%,
-      #96f4ff 13%,
-      #10151e 15%,
-      #f6fbff 24%,
-      #b9c4d2 34%,
-      #3e4654 44%,
-      #090b10 49%,
-      #b1061d 50%,
-      #ff2448 62%,
-      #ffedf1 72%,
-      #7a0b18 82%,
-      #f7fbff 100%);
+      #ffffff 0%,
+      #d8f0ff 4%,
+      #8ec4e8 8%,
+      #020609 11%,
+      #f4faff 13%,
+      #bacfe0 20%,
+      #5c7e9c 31%,
+      #1a2b3c 42%,
+      #010306 48%,
+      #a80018 50%,
+      #ff2040 57%,
+      #ff7888 67%,
+      #d01022 77%,
+      #6c0010 87%,
+      #deeeff 94%,
+      #9ab4c8 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-stroke: clamp(2px, 0.32vw, 4.5px) rgba(3, 4, 10, 0.98);
   text-shadow:
-    0.025em 0.025em 0 #ffffff,
-    0.055em 0.06em 0 #090b10,
-    0.09em 0.1em 0 #05060b,
-    0.13em 0.15em 0 rgba(0, 0, 0, 0.95),
-    -0.035em -0.035em 0 rgba(32, 242, 255, 0.9),
-    0 0.19em 0 rgba(5, 6, 11, 0.92);
+    0.02em 0.02em 0 #e0f4ff,
+    0.05em 0.055em 0 #090b10,
+    0.09em 0.10em 0 #060708,
+    0.13em 0.15em 0 #030407,
+    0.17em 0.20em 0 rgba(0, 0, 0, 0.96),
+    -0.025em -0.025em 0 rgba(20, 210, 255, 0.75),
+    0 0.22em 0 rgba(3, 4, 10, 0.94);
   transform: translateX(-50%) scaleX(1.14);
 }
 
@@ -419,11 +424,11 @@ h1 span::after {
 h1 span::before {
   z-index: -1;
   color: transparent;
-  -webkit-text-stroke: clamp(7px, 0.85vw, 12px) rgba(2, 3, 8, 0.96);
+  -webkit-text-stroke: clamp(8px, 1vw, 14px) rgba(1, 2, 6, 0.98);
   text-shadow:
-    0.06em 0.06em 0 #2d050c,
-    0.12em 0.12em 0 #020309,
-    0.19em 0.19em 0 rgba(0, 0, 0, 0.85);
+    0.06em 0.07em 0 #1e030a,
+    0.12em 0.14em 0 #010208,
+    0.19em 0.22em 0 rgba(0, 0, 0, 0.9);
 }
 
 h1 span::after {
@@ -441,20 +446,22 @@ h1 span:nth-child(1) {
   position: relative;
   left: auto;
   margin: 0 auto -0.03em;
-  font-size: 0.74em;
-  transform: scaleX(1.1);
+  font-size: 0.55em;
+  letter-spacing: 0.06em;
+  transform: scaleX(1.18) skewX(-10deg);
 }
 
 h1 span:nth-child(2) {
-  top: 0.63em;
-  font-size: 0.92em;
-  transform: translateX(-50%) scaleX(1.02);
+  top: 0.46em;
+  font-size: 1.0em;
+  transform: translateX(-50%) scaleX(1.1) skewX(-10deg);
 }
 
 h1 span:nth-child(3) {
-  top: 1.24em;
-  font-size: 1.02em;
-  transform: translateX(-50%) scaleX(1.22);
+  top: 1.32em;
+  font-size: 0.92em;
+  letter-spacing: 0.14em;
+  transform: translateX(-50%) scaleX(1.22) skewX(-10deg);
 }
 
 .message {
@@ -588,6 +595,45 @@ h1 span:nth-child(3) {
     font-size: clamp(3rem, 17vw, 5.3rem);
     max-width: 9.4ch;
   }
+}
+
+.pkg-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: clamp(1rem, 2.4vw, 1.6rem);
+  pointer-events: none;
+}
+
+.pkg-band.top {
+  top: 0;
+  background: linear-gradient(180deg,
+    #ff5060 0%,
+    #cc0020 35%,
+    #ff2448 55%,
+    #8a0015 80%,
+    #ff2448 100%);
+  box-shadow:
+    0 0 1.2rem rgba(255, 36, 72, 0.8),
+    0 0 3rem rgba(255, 36, 72, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.pkg-band.bottom {
+  bottom: 0;
+  background: linear-gradient(180deg,
+    #245cff 0%,
+    #0a2acc 35%,
+    #2060ff 55%,
+    #071890 80%,
+    #1840dd 100%);
+  box-shadow:
+    0 0 1.2rem rgba(36, 92, 255, 0.8),
+    0 0 3rem rgba(36, 92, 255, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.5);
 }
 
 @media (prefers-reduced-motion: reduce) {
