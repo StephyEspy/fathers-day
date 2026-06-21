@@ -3,10 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Father's Day</title>
-    <link rel="stylesheet" href="styles.css?v=image-card-1">
+    <title>happy fathers day !</title>
+    <link rel="stylesheet" href="styles.css?v=ascii-1">
   </head>
   <body>
-    <img class="card" src="assets/fathers-day-card.png?v=1" alt="Happy Father's Day">
+    <main class="page">
+      <h1>happy fathers day !</h1>
+      <pre
+        id="ascii-art"
+        class="ascii-art"
+        aria-label="ASCII art portrait"
+      >loading ascii...</pre>
+      <canvas id="source-canvas" hidden></canvas>
+      <img id="source-image" src="assets/dad.jpg?v=1" alt="" hidden>
+    </main>
+    <script src="script.js?v=ascii-1"></script>
   </body>
 </html>

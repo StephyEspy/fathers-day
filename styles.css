@@ -1,3 +1,10 @@
+:root {
+  color-scheme: dark;
+  --bg: #03040a;
+  --panel: rgba(255, 255, 255, 0.04);
+  --text: #f7fbff;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -10,15 +17,88 @@ body {
 body {
   margin: 0;
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  background: #050506;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(97, 218, 255, 0.18), transparent 22rem),
+    radial-gradient(circle at 15% 100%, rgba(255, 68, 170, 0.18), transparent 18rem),
+    var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.card {
-  width: 100vw;
-  height: 100vh;
-  display: block;
-  object-fit: contain;
+.page {
+  min-height: 100vh;
+  width: min(100% - 1.5rem, 1180px);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3.5rem) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 1.8rem);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.35rem, 8vw, 5.6rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+  text-align: center;
+  text-transform: lowercase;
+  color: #ffffff;
+  text-shadow:
+    0 0 0.65rem rgba(84, 232, 255, 0.72),
+    0 0 1.4rem rgba(255, 71, 179, 0.4);
+}
+
+.ascii-art {
+  width: min(100%, 980px);
+  max-height: 72vh;
+  margin: 0;
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+  overflow: auto;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.75rem;
+  background: var(--panel);
+  box-shadow:
+    0 1.5rem 4rem rgba(0, 0, 0, 0.34),
+    inset 0 0 3rem rgba(255, 255, 255, 0.035);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: clamp(0.24rem, 0.68vw, 0.48rem);
+  line-height: 0.78;
+  letter-spacing: 0;
+  white-space: pre;
+  filter: saturate(1.4);
+  animation: color-shift 8s linear infinite;
+}
+
+.ascii-art span {
+  color: hsl(var(--hue), 92%, var(--lightness));
+  text-shadow: 0 0 0.42em hsla(var(--hue), 95%, 62%, 0.36);
+}
+
+@keyframes color-shift {
+  from {
+    filter: hue-rotate(0deg) saturate(1.35);
+  }
+
+  to {
+    filter: hue-rotate(360deg) saturate(1.35);
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    justify-content: flex-start;
+  }
+
+  .ascii-art {
+    max-height: 78vh;
+    font-size: clamp(0.2rem, 1vw, 0.34rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ascii-art {
+    animation: none;
+  }
 }
