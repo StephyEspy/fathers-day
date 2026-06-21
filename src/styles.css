@@ -1,8 +1,7 @@
 :root {
   color-scheme: dark;
-  --bg: #03040a;
-  --panel: rgba(255, 255, 255, 0.04);
-  --text: #f7fbff;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #03040a;
 }
 
 * {
@@ -10,7 +9,8 @@
 }
 
 html,
-body {
+body,
+#root {
   min-height: 100%;
 }
 
@@ -20,9 +20,8 @@ body {
   background:
     radial-gradient(circle at 50% 0%, rgba(97, 218, 255, 0.18), transparent 22rem),
     radial-gradient(circle at 15% 100%, rgba(255, 68, 170, 0.18), transparent 18rem),
-    var(--bg);
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+    #03040a;
+  color: #f8fafc;
 }
 
 .page {
@@ -50,40 +49,21 @@ h1 {
     0 0 1.4rem rgba(255, 71, 179, 0.4);
 }
 
-.ascii-art {
+.ascii-card {
   width: min(100%, 980px);
-  max-height: 72vh;
-  margin: 0;
-  padding: clamp(0.75rem, 2vw, 1.25rem);
-  overflow: auto;
+  height: min(72vh, 620px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 0.75rem;
-  background: var(--panel);
+  background: rgba(255, 255, 255, 0.04);
   box-shadow:
     0 1.5rem 4rem rgba(0, 0, 0, 0.34),
     inset 0 0 3rem rgba(255, 255, 255, 0.035);
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  font-size: clamp(0.24rem, 0.68vw, 0.48rem);
-  line-height: 0.78;
-  letter-spacing: 0;
-  white-space: pre;
-  filter: saturate(1.4);
-  animation: color-shift 8s linear infinite;
 }
 
-.ascii-art span {
-  color: hsl(var(--hue), 92%, var(--lightness));
-  text-shadow: 0 0 0.42em hsla(var(--hue), 95%, 62%, 0.36);
-}
-
-@keyframes color-shift {
-  from {
-    filter: hue-rotate(0deg) saturate(1.35);
-  }
-
-  to {
-    filter: hue-rotate(360deg) saturate(1.35);
-  }
+.ascii-card canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 640px) {
@@ -91,14 +71,7 @@ h1 {
     justify-content: flex-start;
   }
 
-  .ascii-art {
-    max-height: 78vh;
-    font-size: clamp(0.2rem, 1vw, 0.34rem);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ascii-art {
-    animation: none;
+  .ascii-card {
+    height: 72vh;
   }
 }

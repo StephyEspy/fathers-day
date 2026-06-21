@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "rm -rf dist assets/index-*.js assets/index-*.css assets/dad-*.jpg && cp src/index.template.html index.html && vite build && cp dist/index.html index.html && cp -R dist/assets/* assets/",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "clsx": "latest",
+    "motion": "^12.40.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwind-merge": "latest",
+    "typescript": "latest",
+    "vite": "latest"
+  }
+}
