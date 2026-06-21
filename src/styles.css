@@ -49,18 +49,19 @@ h1 {
     0 0 1.4rem rgba(255, 71, 179, 0.4);
 }
 
-.ascii-card {
+.ascii-demo {
   width: min(100%, 980px);
-  height: min(72vh, 620px);
+  height: min(70vh, 620px);
+  min-height: 360px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 0.75rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: #0a0a0a;
   box-shadow:
     0 1.5rem 4rem rgba(0, 0, 0, 0.34),
     inset 0 0 3rem rgba(255, 255, 255, 0.035);
 }
 
-.ascii-card canvas {
+.ascii-demo canvas {
   display: block;
   width: 100%;
   height: 100%;
@@ -71,7 +72,8 @@ h1 {
     justify-content: flex-start;
   }
 
-  .ascii-card {
-    height: 72vh;
+  .ascii-demo {
+    height: 70vh;
+    min-height: 340px;
   }
 }
